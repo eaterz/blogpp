@@ -38,4 +38,10 @@ abstract class Model {
 
         return self::$db->query($sql, $params);
     }
+    public static function delete($id) {
+        self::init();
+        $sql = "DELETE FROM " . static::getTableName(). " WHERE id = :id ";
+        $params = [':id' => $id];
+        self::$db->query($sql, $params);
+    }
 }

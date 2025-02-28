@@ -9,13 +9,17 @@
 <h1>Visi bloga ieraksti</h1>
 
 <a href="/create">Izveidot ierakstu</a>
-
 <ol>
-
     <?php foreach($posts as $post){ ?>
-        <a href="/show?id=<?= $post["id"]?>">Visi ieraksti</a>
+            <li>
+                <a href="/show?id=<?= $post["id"]?>"><?= $post["content"] ?></a>
+                <form action="/delete" method="post">
+                    <input type="hidden" name="id" value="<?= $post['id'] ?>">
+                    <button type="submit">❌</button>
+                </form>
+            </li>
 
-        <li> <?= $post["content"] ?> </li><br>
+
     <?php } ?>
 </ol>
 </body>

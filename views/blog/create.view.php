@@ -7,8 +7,9 @@
 </head>
 <body>
 <a href="/">Atgriezties</a>
-<form>
-
+<form action="/store" method="post" >
+    <input type="text" name="content">
+    <button>Submit</button>
 </form>
 </body>
 </html>

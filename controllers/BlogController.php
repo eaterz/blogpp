@@ -15,6 +15,19 @@ class BlogController {
     public function create() {
         require "views/blog/create.view.php";
     }
+    public function store() {
+        $data = $_POST["content"];
+        Blog::create(["content" => $data]);
+        header("Location: /");
+    }
+
+    public function destroy() {
+        $id = $_POST["id"];
+        Blog::delete($id);
+        header("Location: /");
+    }
+
+
 
 
 
